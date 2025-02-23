@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RockeySensei - BDFD</title>
-    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096"
+    />
     <!-- Fuentes e íconos -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <!-- Animate.css para animaciones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- Particles.js (para fondo animado en Hero) -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
@@ -36,6 +49,10 @@
         color: var(--text-color);
         overflow-x: hidden;
         position: relative;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
       }
       /* Encabezado fijo */
       header {
@@ -167,11 +184,6 @@
         align-items: center;
         justify-content: center;
         gap: 40px;
-      }
-      #about .content img {
-        max-width: 300px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       }
       #about .content .text {
         max-width: 500px;
@@ -649,7 +661,6 @@
         <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
         <button type="submit">Enviar Mensaje</button>
       </form>
-      <p style="margin-top: 15px; font-size: 0.9rem"></p>
     </section>
 
     <!-- Pie de Página -->
@@ -695,11 +706,11 @@
       // Efecto reveal al hacer scroll
       function reveal() {
         const reveals = document.querySelectorAll(".reveal");
-        reveals.forEach((reveal) => {
+        reveals.forEach((element) => {
           const windowHeight = window.innerHeight;
-          const elementTop = reveal.getBoundingClientRect().top;
+          const elementTop = element.getBoundingClientRect().top;
           if (elementTop < windowHeight - 150) {
-            reveal.classList.add("active");
+            element.classList.add("active");
           }
         });
       }
