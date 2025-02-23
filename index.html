@@ -4,13 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RockeySensei - BDFD</title>
-    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096"
+    />
     <!-- Fuentes e íconos -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <!-- Animate.css para animaciones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Particles.js (para fondo animado en Hero) -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
       :root {
@@ -41,14 +54,14 @@
         max-width: 100%;
         height: auto;
       }
-      /* Encabezado fijo y menú responsivo */
+      /* Encabezado y navegación */
       header {
         position: fixed;
         width: 100%;
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, 0.8);
-        padding: 20px;
+        padding: 20px 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -60,18 +73,16 @@
         font-weight: 600;
         letter-spacing: 2px;
       }
-      /* Input checkbox oculto para el menú */
+      /* Menú responsivo: checkbox oculto y hamburguesa */
       #menu-toggle {
         display: none;
       }
-      /* Ícono hamburguesa: se muestra en móvil */
       .menu-icon {
         display: none;
         font-size: 1.8rem;
         color: var(--text-color);
         cursor: pointer;
       }
-      /* Navegación: en PC se muestra en línea */
       nav ul {
         list-style: none;
         display: flex;
@@ -116,7 +127,7 @@
         font-size: 1.1rem;
         line-height: 1.6;
       }
-      /* Sección Hero con fondo de partículas y overlay */
+      /* Sección Hero */
       #hero {
         height: 100vh;
         position: relative;
@@ -184,6 +195,12 @@
         align-items: center;
         justify-content: center;
         gap: 40px;
+      }
+      /* Limitamos el tamaño de la imagen de perfil */
+      #about .content img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
       }
       #about .content .text {
         max-width: 500px;
@@ -404,7 +421,7 @@
         text-align: center;
         font-size: 0.9rem;
       }
-      /* Efecto reveal al hacer scroll */
+      /* Efecto reveal */
       .reveal {
         opacity: 0;
         transform: translateY(30px);
@@ -436,13 +453,12 @@
       #backToTop:hover {
         background: var(--accent-color);
       }
-      /* Ajustes para dispositivos móviles */
+      /* Media Queries para móviles */
       @media (max-width: 768px) {
         header {
           flex-direction: column;
-          padding: 10px;
+          padding: 10px 20px;
         }
-        /* Ocultar menú en línea y mostrar hamburguesa */
         .menu-icon {
           display: block;
         }
@@ -451,7 +467,7 @@
           width: 100%;
           background: rgba(0, 0, 0, 0.9);
           position: absolute;
-          top: 70px; /* Ajusta según la altura del header */
+          top: 60px;
           left: 0;
           display: none;
           padding: 10px 0;
@@ -460,11 +476,9 @@
         nav ul li {
           margin: 10px 0;
         }
-        /* Mostrar menú cuando el checkbox esté activado */
         #menu-toggle:checked + .menu-icon + nav ul {
           display: flex;
         }
-        /* Ajustes en el Hero */
         #hero h1 {
           font-size: 2.5rem;
         }
@@ -520,7 +534,7 @@
       </nav>
     </header>
 
-    <!-- Sección Hero con fondo de partículas -->
+    <!-- Sección Hero -->
     <section id="hero">
       <div id="particles-js"></div>
       <div class="overlay"></div>
@@ -529,7 +543,9 @@
         <p class="animate__animated animate__fadeInUp">
           La comunidad más innovadora para aprender BDFD y diseñar bots épicos para Discord.
         </p>
-        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank" class="cta">Visita mi canal de YouTube</a>
+        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank" class="cta">
+          Visita mi canal de YouTube
+        </a>
       </div>
     </section>
 
@@ -537,7 +553,10 @@
     <section id="about" class="reveal">
       <h2>Acerca de RockeySensei</h2>
       <div class="content">
-        <img src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" alt="Imagen de RockeySensei" />
+        <img
+          src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096"
+          alt="Imagen de RockeySensei"
+        />
         <div class="text">
           <p>
             RockeySensei es una comunidad apasionada por el diseño de bots para Discord con BDFD. Aquí encontrarás tutoriales avanzados, novedades y un apoyo constante para convertirte en un experto.
@@ -558,7 +577,9 @@
       <p>
         Explora funcionalidades avanzadas: comandos personalizados, moderación inteligente y mucho más. ¡El complemento perfecto para cualquier servidor!
       </p>
-      <a href="https://discord.com/oauth2/authorize?client_id=1252443899407110184_ID&scope=bot" target="_blank" class="btn">Agregar Bot a tu Servidor</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1252443899407110184_ID&scope=bot" target="_blank" class="btn">
+        Agregar Bot a tu Servidor
+      </a>
     </section>
 
     <!-- Sección Características -->
@@ -583,7 +604,7 @@
       </div>
     </section>
 
-    <!-- Sección Innovaciones (Timeline) -->
+    <!-- Sección Innovaciones -->
     <section id="innovations" class="reveal">
       <h2>Innovaciones y Logros</h2>
       <div class="timeline">
@@ -645,13 +666,19 @@
     <section id="social" class="reveal">
       <h2>Síguenos en Redes</h2>
       <div class="social-links">
-        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://discord.gg/ykaBqdHhRm" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://www.tiktok.com/@rockeysensei" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://discord.gg/ykaBqdHhRm" target="_blank"
+          ><i class="fab fa-discord"></i
+        ></a>
+        <a href="https://www.tiktok.com/@rockeysensei" target="_blank"
+          ><i class="fab fa-tiktok"></i
+        ></a>
       </div>
     </section>
 
-    <!-- Sección Contacto (Formspree) -->
+    <!-- Sección Contacto -->
     <section id="contact" class="reveal">
       <h2>Contacto</h2>
       <form action="https://formspree.io/f/xrbednvr" method="POST">
@@ -669,7 +696,7 @@
 
     <!-- JavaScript para efectos y funcionalidades -->
     <script>
-      // Inicializa Particles.js en el Hero
+      // Particles.js para el Hero
       particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -681,7 +708,13 @@
           },
           opacity: { value: 0.5, random: false },
           size: { value: 3, random: true },
-          line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1
+          },
           move: { enable: true, speed: 4, direction: "none", random: false, straight: false }
         },
         interactivity: {
