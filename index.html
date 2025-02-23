@@ -4,25 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RockeySensei - BDFD</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096"
-    />
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" />
     <!-- Fuentes e íconos -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <!-- Animate.css para animaciones -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Particles.js (para fondo animado en Hero) -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
@@ -54,7 +41,7 @@
         max-width: 100%;
         height: auto;
       }
-      /* Encabezado fijo */
+      /* Encabezado fijo y menú responsivo */
       header {
         position: fixed;
         width: 100%;
@@ -73,9 +60,22 @@
         font-weight: 600;
         letter-spacing: 2px;
       }
+      /* Input checkbox oculto para el menú */
+      #menu-toggle {
+        display: none;
+      }
+      /* Ícono hamburguesa: se muestra en móvil */
+      .menu-icon {
+        display: none;
+        font-size: 1.8rem;
+        color: var(--text-color);
+        cursor: pointer;
+      }
+      /* Navegación: en PC se muestra en línea */
       nav ul {
         list-style: none;
         display: flex;
+        align-items: center;
       }
       nav ul li {
         margin-left: 20px;
@@ -442,14 +442,29 @@
           flex-direction: column;
           padding: 10px;
         }
+        /* Ocultar menú en línea y mostrar hamburguesa */
+        .menu-icon {
+          display: block;
+        }
         nav ul {
           flex-direction: column;
-          margin-top: 10px;
-          align-items: center;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.9);
+          position: absolute;
+          top: 70px; /* Ajusta según la altura del header */
+          left: 0;
+          display: none;
+          padding: 10px 0;
+          margin: 0;
         }
         nav ul li {
-          margin: 5px 0;
+          margin: 10px 0;
         }
+        /* Mostrar menú cuando el checkbox esté activado */
+        #menu-toggle:checked + .menu-icon + nav ul {
+          display: flex;
+        }
+        /* Ajustes en el Hero */
         #hero h1 {
           font-size: 2.5rem;
         }
@@ -486,6 +501,10 @@
     <!-- Encabezado -->
     <header>
       <div class="logo">RockeySensei</div>
+      <!-- Checkbox oculto para el menú -->
+      <input type="checkbox" id="menu-toggle" />
+      <!-- Ícono hamburguesa -->
+      <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
       <nav>
         <ul>
           <li><a href="#hero">Inicio</a></li>
@@ -506,15 +525,11 @@
       <div id="particles-js"></div>
       <div class="overlay"></div>
       <div class="content">
-        <h1 class="animate__animated animate__fadeInDown">
-          Bienvenido a RockeySensei
-        </h1>
+        <h1 class="animate__animated animate__fadeInDown">Bienvenido a RockeySensei</h1>
         <p class="animate__animated animate__fadeInUp">
           La comunidad más innovadora para aprender BDFD y diseñar bots épicos para Discord.
         </p>
-        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank" class="cta">
-          Visita mi canal de YouTube
-        </a>
+        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank" class="cta">Visita mi canal de YouTube</a>
       </div>
     </section>
 
@@ -522,7 +537,7 @@
     <section id="about" class="reveal">
       <h2>Acerca de RockeySensei</h2>
       <div class="content">
-        <img src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" alt="Imagen de RockeySensei">
+        <img src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" alt="Imagen de RockeySensei" />
         <div class="text">
           <p>
             RockeySensei es una comunidad apasionada por el diseño de bots para Discord con BDFD. Aquí encontrarás tutoriales avanzados, novedades y un apoyo constante para convertirte en un experto.
@@ -543,9 +558,7 @@
       <p>
         Explora funcionalidades avanzadas: comandos personalizados, moderación inteligente y mucho más. ¡El complemento perfecto para cualquier servidor!
       </p>
-      <a href="https://discord.com/oauth2/authorize?client_id=1252443899407110184_ID&scope=bot" target="_blank" class="btn">
-        Agregar Bot a tu Servidor
-      </a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1252443899407110184_ID&scope=bot" target="_blank" class="btn">Agregar Bot a tu Servidor</a>
     </section>
 
     <!-- Sección Características -->
@@ -576,27 +589,19 @@
       <div class="timeline">
         <div class="timeline-event left">
           <h3>Lanzamiento Inicial</h3>
-          <p>
-            Comenzamos nuestra aventura creando el primer bot de diseño para Discord.
-          </p>
+          <p>Comenzamos nuestra aventura creando el primer bot de diseño para Discord.</p>
         </div>
         <div class="timeline-event right">
           <h3>Actualizaciones Épicas</h3>
-          <p>
-            Implementamos funciones avanzadas y personalización total para nuestros usuarios.
-          </p>
+          <p>Implementamos funciones avanzadas y personalización total para nuestros usuarios.</p>
         </div>
         <div class="timeline-event left">
           <h3>Comunidad en Crecimiento</h3>
-          <p>
-            Una comunidad vibrante y activa que comparte conocimientos y se apoya mutuamente.
-          </p>
+          <p>Una comunidad vibrante y activa que comparte conocimientos y se apoya mutuamente.</p>
         </div>
         <div class="timeline-event right">
           <h3>Innovación Continua</h3>
-          <p>
-            Seguimos integrando nuevas tecnologías y mejoras para mantenernos a la vanguardia.
-          </p>
+          <p>Seguimos integrando nuevas tecnologías y mejoras para mantenernos a la vanguardia.</p>
         </div>
       </div>
     </section>
@@ -622,21 +627,15 @@
       <h2>Testimonios</h2>
       <div class="testimonial-container">
         <div class="testimonial active">
-          <p>
-            "RockeySensei transformó mi forma de crear bots. ¡Los tutoriales son inspiradores y la comunidad, de otro nivel!"
-          </p>
+          <p>"RockeySensei transformó mi forma de crear bots. ¡Los tutoriales son inspiradores y la comunidad, de otro nivel!"</p>
           <h4>- Usuario Épico</h4>
         </div>
         <div class="testimonial">
-          <p>
-            "Cada actualización y tutorial me sorprende. RockeySensei es el futuro del diseño en Discord."
-          </p>
+          <p>"Cada actualización y tutorial me sorprende. RockeySensei es el futuro del diseño en Discord."</p>
           <h4>- Fan Innovador</h4>
         </div>
         <div class="testimonial">
-          <p>
-            "Gracias a RockeySensei, lancé mi bot con éxito y ahora mi servidor nunca ha estado tan vivo."
-          </p>
+          <p>"Gracias a RockeySensei, lancé mi bot con éxito y ahora mi servidor nunca ha estado tan vivo."</p>
           <h4>- Desarrollador en Ascenso</h4>
         </div>
       </div>
