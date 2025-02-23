@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RockeySensei - BDFD</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096"
-    />
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" />
     <!-- Fuentes e íconos -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
@@ -196,7 +192,7 @@
         justify-content: center;
         gap: 40px;
       }
-      /* Limitamos el tamaño de la imagen de perfil */
+      /* Ajuste para la imagen de perfil */
       #about .content img {
         max-width: 200px;
         width: 100%;
@@ -453,7 +449,7 @@
       #backToTop:hover {
         background: var(--accent-color);
       }
-      /* Media Queries para móviles */
+      /* Media Queries para dispositivos móviles */
       @media (max-width: 768px) {
         header {
           flex-direction: column;
@@ -479,6 +475,7 @@
         #menu-toggle:checked + .menu-icon + nav ul {
           display: flex;
         }
+        /* Ajustes en el Hero */
         #hero h1 {
           font-size: 2.5rem;
         }
@@ -553,10 +550,7 @@
     <section id="about" class="reveal">
       <h2>Acerca de RockeySensei</h2>
       <div class="content">
-        <img
-          src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096"
-          alt="Imagen de RockeySensei"
-        />
+        <img src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" alt="Imagen de RockeySensei" />
         <div class="text">
           <p>
             RockeySensei es una comunidad apasionada por el diseño de bots para Discord con BDFD. Aquí encontrarás tutoriales avanzados, novedades y un apoyo constante para convertirte en un experto.
@@ -696,7 +690,7 @@
 
     <!-- JavaScript para efectos y funcionalidades -->
     <script>
-      // Particles.js para el Hero
+      // Particles.js en el Hero
       particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
