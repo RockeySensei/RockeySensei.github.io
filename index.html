@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RockeySensei - BDFD</title>
-    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" />
+    <title>RockeySensei - Página Oficial</title>
     <!-- Fuentes e íconos -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap"
@@ -14,13 +13,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <!-- Animate.css -->
+    <!-- Animate.css para animaciones -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
       :root {
         --primary-color: #8e44ad;
@@ -28,7 +25,6 @@
         --accent-color: #e74c3c;
         --bg-color: #121212;
         --text-color: #f5f5f5;
-        --overlay-color: rgba(18, 18, 18, 0.85);
       }
       /* Reset y estilos globales */
       * {
@@ -44,11 +40,6 @@
         background-color: var(--bg-color);
         color: var(--text-color);
         overflow-x: hidden;
-        position: relative;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
       }
       /* Encabezado y navegación */
       header {
@@ -56,33 +47,27 @@
         width: 100%;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 20px 30px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 2000;
-        transition: background 0.3s;
+        z-index: 1000;
       }
       header .logo {
         font-size: 24px;
         font-weight: 600;
         letter-spacing: 2px;
       }
-      /* Menú responsivo: checkbox oculto y hamburguesa */
-      #menu-toggle {
+      /* Menú hamburguesa para móvil */
+      .menu-toggle {
         display: none;
-      }
-      .menu-icon {
-        display: none;
-        font-size: 1.8rem;
-        color: var(--text-color);
+        font-size: 24px;
         cursor: pointer;
       }
       nav ul {
         list-style: none;
         display: flex;
-        align-items: center;
       }
       nav ul li {
         margin-left: 20px;
@@ -99,8 +84,6 @@
       section {
         padding: 100px 20px;
         text-align: center;
-        position: relative;
-        z-index: 1;
       }
       section h2 {
         font-size: 2.5rem;
@@ -126,60 +109,52 @@
       /* Sección Hero */
       #hero {
         height: 100vh;
-        position: relative;
-        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        color: #fff;
-      }
-      #particles-js {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        top: 0;
-        left: 0;
-      }
-      #hero .overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: var(--overlay-color);
-        z-index: 1;
-      }
-      #hero .content {
-        position: relative;
-        z-index: 2;
         padding: 0 20px;
+        background: linear-gradient(-45deg, #8e44ad, #9b59b6, #3498db, #2ecc71);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
       #hero h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         margin-bottom: 20px;
         animation: fadeInDown 1s ease forwards;
       }
       #hero p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         max-width: 600px;
         margin-bottom: 30px;
         animation: fadeInUp 1s ease forwards;
       }
       #hero a.cta {
         padding: 15px 30px;
-        background-color: var(--primary-color);
-        color: var(--bg-color);
+        background-color: var(--bg-color);
+        color: var(--primary-color);
         border: 2px solid var(--primary-color);
         border-radius: 30px;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 600;
         transition: all 0.3s ease;
         animation: pulse 2s infinite;
       }
       #hero a.cta:hover {
-        background-color: var(--bg-color);
-        color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: var(--bg-color);
       }
       /* Sección Acerca de */
       #about {
@@ -187,21 +162,19 @@
       }
       #about .content {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
       }
-      /* Ajuste para la imagen de perfil */
       #about .content img {
-        max-width: 200px;
-        width: 100%;
-        height: auto;
+        max-width: 300px;
+        border-radius: 10px;
       }
       #about .content .text {
         max-width: 500px;
         text-align: left;
-        line-height: 1.6;
       }
       /* Sección Bot */
       #bot .bot-icon {
@@ -226,19 +199,18 @@
         background-color: #1e1e1e;
       }
       #features .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 30px;
-        justify-items: center;
-        padding: 20px;
       }
       #features .card {
         background: #2c2c2c;
         padding: 20px;
         border-radius: 10px;
+        width: 280px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s;
-        text-align: center;
       }
       #features .card:hover {
         transform: translateY(-10px);
@@ -255,64 +227,6 @@
       #features .card p {
         font-size: 1rem;
         line-height: 1.5;
-      }
-      /* Sección Innovaciones (Timeline) */
-      #innovations {
-        background: linear-gradient(135deg, #2ecc71, #3498db);
-        color: #fff;
-        padding: 100px 20px;
-      }
-      #innovations h2 {
-        color: #fff;
-      }
-      #innovations .timeline {
-        position: relative;
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 0 20px;
-      }
-      #innovations .timeline::after {
-        content: "";
-        position: absolute;
-        width: 6px;
-        background-color: #fff;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -3px;
-      }
-      .timeline-event {
-        padding: 20px 40px;
-        position: relative;
-        background: rgba(0, 0, 0, 0.2);
-        width: 45%;
-        border-radius: 10px;
-        margin-bottom: 30px;
-      }
-      .timeline-event::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: var(--primary-color);
-        border: 4px solid #fff;
-        top: 20px;
-        border-radius: 50%;
-        z-index: 1;
-      }
-      .timeline-event.left {
-        left: 0;
-        text-align: right;
-      }
-      .timeline-event.left::after {
-        right: -10px;
-      }
-      .timeline-event.right {
-        left: 55%;
-        text-align: left;
-      }
-      .timeline-event.right::after {
-        left: -10px;
       }
       /* Sección Tutoriales */
       #tutorials {
@@ -367,21 +281,6 @@
         font-weight: 600;
         color: var(--primary-color);
       }
-      /* Sección Redes Sociales */
-      #social .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        font-size: 2.5rem;
-      }
-      #social .social-links a {
-        color: var(--text-color);
-        transition: transform 0.3s, color 0.3s;
-      }
-      #social .social-links a:hover {
-        transform: scale(1.2);
-        color: var(--primary-color);
-      }
       /* Sección Contacto */
       #contact form {
         max-width: 500px;
@@ -410,6 +309,21 @@
       #contact form button:hover {
         background-color: var(--accent-color);
       }
+      /* Sección Redes Sociales */
+      #social .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        font-size: 2.5rem;
+      }
+      #social .social-links a {
+        color: var(--text-color);
+        transition: transform 0.3s, color 0.3s;
+      }
+      #social .social-links a:hover {
+        transform: scale(1.2);
+        color: var(--primary-color);
+      }
       /* Pie de Página */
       footer {
         background-color: #000;
@@ -417,7 +331,7 @@
         text-align: center;
         font-size: 0.9rem;
       }
-      /* Efecto reveal */
+      /* Efecto reveal al hacer scroll */
       .reveal {
         opacity: 0;
         transform: translateY(30px);
@@ -427,102 +341,69 @@
         opacity: 1;
         transform: translateY(0);
       }
-      /* Botón Volver Arriba */
-      #backToTop {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: var(--primary-color);
-        color: var(--bg-color);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 3000;
-        transition: background 0.3s;
-      }
-      #backToTop:hover {
-        background: var(--accent-color);
-      }
-      /* Media Queries para dispositivos móviles */
+      /* Media Queries para dispositivos pequeños */
       @media (max-width: 768px) {
         header {
-          flex-direction: column;
-          padding: 10px 20px;
+          flex-direction: row;
+          justify-content: space-between;
         }
-        .menu-icon {
+        .menu-toggle {
           display: block;
+        }
+        nav {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.9);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        nav.active {
+          max-height: 300px;
         }
         nav ul {
           flex-direction: column;
-          width: 100%;
-          background: rgba(0, 0, 0, 0.9);
-          position: absolute;
-          top: 60px;
-          left: 0;
-          display: none;
           padding: 10px 0;
-          margin: 0;
         }
         nav ul li {
           margin: 10px 0;
         }
-        #menu-toggle:checked + .menu-icon + nav ul {
-          display: flex;
-        }
-        /* Ajustes en el Hero */
         #hero h1 {
           font-size: 2.5rem;
         }
-        #hero p {
-          font-size: 1rem;
-          margin-bottom: 20px;
-          padding: 0 10px;
+        #about .content {
+          flex-direction: column;
         }
+      }
+      @media (max-width: 480px) {
         section {
           padding: 80px 10px;
         }
-        #about .content {
-          flex-direction: column;
-          text-align: center;
-        }
-        #about .content .text {
-          text-align: center;
-          max-width: 90%;
-        }
-        .timeline-event {
-          width: 90%;
-          margin: 20px auto;
-        }
-        #social .social-links {
+        section h2 {
           font-size: 2rem;
+        }
+        #hero h1 {
+          font-size: 2rem;
+        }
+        #hero p {
+          font-size: 1rem;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Botón Volver Arriba -->
-    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
-
     <!-- Encabezado -->
     <header>
       <div class="logo">RockeySensei</div>
-      <!-- Checkbox oculto para el menú -->
-      <input type="checkbox" id="menu-toggle" />
-      <!-- Ícono hamburguesa -->
-      <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <i class="fas fa-bars menu-toggle"></i>
       <nav>
         <ul>
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#about">Acerca</a></li>
           <li><a href="#bot">Bot</a></li>
           <li><a href="#features">Características</a></li>
-          <li><a href="#innovations">Innovaciones</a></li>
           <li><a href="#tutorials">Tutoriales</a></li>
           <li><a href="#testimonials">Testimonios</a></li>
           <li><a href="#social">Redes</a></li>
@@ -533,30 +414,41 @@
 
     <!-- Sección Hero -->
     <section id="hero">
-      <div id="particles-js"></div>
-      <div class="overlay"></div>
-      <div class="content">
-        <h1 class="animate__animated animate__fadeInDown">Bienvenido a RockeySensei</h1>
-        <p class="animate__animated animate__fadeInUp">
-          La comunidad más innovadora para aprender BDFD y diseñar bots épicos para Discord.
-        </p>
-        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank" class="cta">
-          Visita mi canal de YouTube
-        </a>
-      </div>
+      <h1 class="animate__animated animate__fadeInDown">
+        Bienvenido a RockeySensei
+      </h1>
+      <p class="animate__animated animate__fadeInUp">
+        El mejor canal y comunidad para aprender BDFD y diseñar bots para
+        Discord. ¡Contenido exclusivo, tutoriales y mucho más!
+      </p>
+      <a
+        href="https://www.youtube.com/channel/tu-canal"
+        target="_blank"
+        class="cta"
+      >
+        Visita mi canal de YouTube
+      </a>
     </section>
 
     <!-- Sección Acerca de -->
     <section id="about" class="reveal">
       <h2>Acerca de RockeySensei</h2>
       <div class="content">
-        <img src="https://cdn.discordapp.com/icons/1275588712951976016/6d6f50588d3a7fb7d68ba90a92bb9882.png?size=4096" alt="Imagen de RockeySensei" />
+        <img
+          src="https://via.placeholder.com/300x300.png?text=RockeySensei"
+          alt="Imagen de RockeySensei"
+        />
         <div class="text">
           <p>
-            RockeySensei es una comunidad apasionada por el diseño de bots para Discord con BDFD. Aquí encontrarás tutoriales avanzados, novedades y un apoyo constante para convertirte en un experto.
+            RockeySensei es una comunidad apasionada por el diseño de bots para
+            Discord usando BDFD. Aquí encontrarás tutoriales detallados,
+            novedades y una comunidad que te apoyará en cada paso para
+            convertirte en un experto.
           </p>
           <p>
-            Nuestro objetivo es ofrecerte las mejores herramientas y recursos para que lleves tus proyectos al siguiente nivel. ¡Únete a esta aventura tecnológica!
+            Nuestro objetivo es ofrecerte herramientas, consejos y recursos para
+            que puedas llevar tus proyectos al siguiente nivel. ¡Únete y sé
+            parte de esta aventura tecnológica!
           </p>
         </div>
       </div>
@@ -569,9 +461,16 @@
         <i class="fas fa-robot"></i>
       </div>
       <p>
-        Explora funcionalidades avanzadas: comandos personalizados, moderación inteligente y mucho más. ¡El complemento perfecto para cualquier servidor!
+        Explora las funcionalidades avanzadas de nuestro bot, diseñado para
+        ofrecer una experiencia única en Discord. Con comandos personalizados,
+        moderación y herramientas divertidas, ¡es la adición perfecta para
+        cualquier servidor!
       </p>
-      <a href="https://discord.com/oauth2/authorize?client_id=1252443899407110184_ID&scope=bot" target="_blank" class="btn">
+      <a
+        href="https://discord.com/oauth2/authorize?client_id=TU_CLIENT_ID&scope=bot"
+        target="_blank"
+        class="btn"
+      >
         Agregar Bot a tu Servidor
       </a>
     </section>
@@ -583,40 +482,32 @@
         <div class="card animate__animated animate__zoomIn">
           <i class="fas fa-cogs"></i>
           <h3>Personalización</h3>
-          <p>Configura el bot a tu medida con opciones ilimitadas.</p>
+          <p>
+            Adapta el bot a tus necesidades con comandos configurables y
+            opciones ilimitadas.
+          </p>
         </div>
-        <div class="card animate__animated animate__zoomIn" style="animation-delay: 0.2s">
+        <div
+          class="card animate__animated animate__zoomIn"
+          style="animation-delay: 0.2s"
+        >
           <i class="fas fa-shield-alt"></i>
           <h3>Seguridad</h3>
-          <p>Sistemas avanzados de moderación y anti-spam para proteger tu comunidad.</p>
+          <p>
+            Protege tu servidor con sistemas de moderación y anti-spam de última
+            generación.
+          </p>
         </div>
-        <div class="card animate__animated animate__zoomIn" style="animation-delay: 0.4s">
+        <div
+          class="card animate__animated animate__zoomIn"
+          style="animation-delay: 0.4s"
+        >
           <i class="fas fa-rocket"></i>
           <h3>Rendimiento</h3>
-          <p>Disfruta de una experiencia fluida y optimizada para grandes comunidades.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Innovaciones -->
-    <section id="innovations" class="reveal">
-      <h2>Innovaciones y Logros</h2>
-      <div class="timeline">
-        <div class="timeline-event left">
-          <h3>Lanzamiento Inicial</h3>
-          <p>Comenzamos nuestra aventura creando el primer bot de diseño para Discord.</p>
-        </div>
-        <div class="timeline-event right">
-          <h3>Actualizaciones Épicas</h3>
-          <p>Implementamos funciones avanzadas y personalización total para nuestros usuarios.</p>
-        </div>
-        <div class="timeline-event left">
-          <h3>Comunidad en Crecimiento</h3>
-          <p>Una comunidad vibrante y activa que comparte conocimientos y se apoya mutuamente.</p>
-        </div>
-        <div class="timeline-event right">
-          <h3>Innovación Continua</h3>
-          <p>Seguimos integrando nuevas tecnologías y mejoras para mantenernos a la vanguardia.</p>
+          <p>
+            Disfruta de una experiencia fluida y rápida, optimizada para grandes
+            comunidades.
+          </p>
         </div>
       </div>
     </section>
@@ -626,13 +517,31 @@
       <h2>Tutoriales y Proyectos</h2>
       <div class="videos">
         <div class="video animate__animated animate__fadeIn">
-          <iframe src="https://www.youtube.com/embed/s19HFzvuaK8" frameborder="0" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID1"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div class="video animate__animated animate__fadeIn" style="animation-delay: 0.2s">
-          <iframe src="https://www.youtube.com/embed/NK1ODtaoHyQ" frameborder="0" allowfullscreen></iframe>
+        <div
+          class="video animate__animated animate__fadeIn"
+          style="animation-delay: 0.2s"
+        >
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID2"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div class="video animate__animated animate__fadeIn" style="animation-delay: 0.4s">
-          <iframe src="https://www.youtube.com/embed/68UA3VV_n8w" frameborder="0" allowfullscreen></iframe>
+        <div
+          class="video animate__animated animate__fadeIn"
+          style="animation-delay: 0.4s"
+        >
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID3"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </section>
@@ -642,16 +551,25 @@
       <h2>Testimonios</h2>
       <div class="testimonial-container">
         <div class="testimonial active">
-          <p>"RockeySensei transformó mi forma de crear bots. ¡Los tutoriales son inspiradores y la comunidad, de otro nivel!"</p>
-          <h4>- Usuario Épico</h4>
+          <p>
+            "RockeySensei me ayudó a mejorar mis bots de Discord de una manera
+            increíble. ¡La comunidad y los tutoriales son de primer nivel!"
+          </p>
+          <h4>- Usuario Satisfecho</h4>
         </div>
         <div class="testimonial">
-          <p>"Cada actualización y tutorial me sorprende. RockeySensei es el futuro del diseño en Discord."</p>
-          <h4>- Fan Innovador</h4>
+          <p>
+            "La atención y el soporte que ofrece RockeySensei es excepcional.
+            ¡Recomiendo este canal a todos los interesados en BDFD!"
+          </p>
+          <h4>- Fan de los Bots</h4>
         </div>
         <div class="testimonial">
-          <p>"Gracias a RockeySensei, lancé mi bot con éxito y ahora mi servidor nunca ha estado tan vivo."</p>
-          <h4>- Desarrollador en Ascenso</h4>
+          <p>
+            "Gracias a RockeySensei, pude lanzar mi propio bot en Discord. La
+            calidad del contenido es impresionante."
+          </p>
+          <h4>- Desarrollador en Crecimiento</h4>
         </div>
       </div>
     </section>
@@ -660,25 +578,35 @@
     <section id="social" class="reveal">
       <h2>Síguenos en Redes</h2>
       <div class="social-links">
-        <a href="https://www.youtube.com/channel/UClvk5GyshGcnwRajUosoRgg" target="_blank"
+        <a href="https://www.youtube.com/channel/tu-canal" target="_blank"
           ><i class="fab fa-youtube"></i
         ></a>
-        <a href="https://discord.gg/ykaBqdHhRm" target="_blank"
+        <a href="https://discord.gg/tu-invitacion" target="_blank"
           ><i class="fab fa-discord"></i
         ></a>
-        <a href="https://www.tiktok.com/@rockeysensei" target="_blank"
+        <a href="https://www.tiktok.com/@tu-cuenta" target="_blank"
           ><i class="fab fa-tiktok"></i
         ></a>
       </div>
     </section>
 
-    <!-- Sección Contacto -->
+    <!-- Sección Contacto con Formspree -->
     <section id="contact" class="reveal">
       <h2>Contacto</h2>
       <form action="https://formspree.io/f/xrbednvr" method="POST">
         <input type="text" name="nombre" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu correo electrónico" required />
-        <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+        <input
+          type="email"
+          name="email"
+          placeholder="Tu correo electrónico"
+          required
+        />
+        <textarea
+          name="mensaje"
+          rows="5"
+          placeholder="Tu mensaje"
+          required
+        ></textarea>
         <button type="submit">Enviar Mensaje</button>
       </form>
     </section>
@@ -688,62 +616,31 @@
       <p>&copy; 2025 RockeySensei. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- JavaScript para efectos y funcionalidades -->
+    <!-- JavaScript para menú móvil, efecto reveal y slider de testimonios -->
     <script>
-      // Particles.js en el Hero
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: "#ffffff" },
-          shape: {
-            type: "circle",
-            stroke: { width: 0, color: "#000000" },
-            polygon: { nb_sides: 5 }
-          },
-          opacity: { value: 0.5, random: false },
-          size: { value: 3, random: true },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1
-          },
-          move: { enable: true, speed: 4, direction: "none", random: false, straight: false }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "grab" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-          },
-          modes: {
-            grab: { distance: 140, line_linked: { opacity: 1 } },
-            bubble: { distance: 400, size: 40, duration: 2, opacity: 8 },
-            repulse: { distance: 200 },
-            push: { particles_nb: 4 },
-            remove: { particles_nb: 2 }
-          }
-        },
-        retina_detect: true
+      // Toggle del menú móvil
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
       });
 
-      // Efecto reveal al hacer scroll
+      // Función para revelar elementos al hacer scroll
       function reveal() {
         const reveals = document.querySelectorAll(".reveal");
-        reveals.forEach((element) => {
+        for (let i = 0; i < reveals.length; i++) {
           const windowHeight = window.innerHeight;
-          const elementTop = element.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 150) {
-            element.classList.add("active");
+          const elementTop = reveals[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
           }
-        });
+        }
       }
       window.addEventListener("scroll", reveal);
       reveal();
 
-      // Slider de testimonios
+      // Slider simple para testimonios
       let testimonialIndex = 0;
       const testimonials = document.querySelectorAll(".testimonial");
       function showTestimonial(index) {
@@ -758,19 +655,6 @@
         testimonialIndex = (testimonialIndex + 1) % testimonials.length;
         showTestimonial(testimonialIndex);
       }, 5000);
-
-      // Botón Volver Arriba
-      const backToTop = document.getElementById("backToTop");
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTop.style.display = "flex";
-        } else {
-          backToTop.style.display = "none";
-        }
-      });
-      backToTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
     </script>
   </body>
 </html>
